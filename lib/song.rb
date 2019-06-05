@@ -25,12 +25,8 @@ class Song
     @artist = artist
     @genre = genre
     @@count += 1
-    #  if !(@@artists.include?(artist))
-      @@artists << artist
-    #  end
-    # if !(@@genres.include?(genre))
-      @@genres << genre
-    #  end
+    @@artists << artist
+    @@genres << genre
     @@song << self
     fillArtistGenre
   end
@@ -40,11 +36,11 @@ class Song
   end
 
   def self.artists
-    @@artists
+    @@artists.uniq
   end
 
   def self.genres
-    @@genres
+    @@genres.uniq
   end
 
   def self.genre_count
